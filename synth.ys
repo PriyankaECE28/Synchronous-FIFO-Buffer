@@ -1,0 +1,17 @@
+read_verilog fifo.v
+hierarchy -top fifo
+
+proc
+opt
+fsm
+opt
+memory
+opt
+techmap
+opt
+clean
+
+show -format dot -prefix yosys_show
+
+stat
+write_verilog synthesized_fifo.v
